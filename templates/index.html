@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <header> <h2> 1001722893, Vadhera Bhanu </h2> </header>
+    <header> <h3> Quiz 4 </h3> </header>
+</head>
+<body>
+
+
+    <form name="formnew1" action="/kmeansClusteringDisplay" class="inpt" method="post">
+        kmeansClustering (Display):
+          <fieldset>
+          <legend>Clusters: <input type="number" step="1" name="numberOfClusters" id="range">
+                column1:<input type="text" step="1" name="column1" id="range"> <br>
+                column2:<input type="text" step="1" name="column2" id="range"> <br>
+              Display clusters for column1 & column2::
+          <input type="submit" name="submit">
+        </fieldset>
+        </form>
+        <br>
+
+        <form name="formnew1" action="/kmeansClustering" class="inpt" method="post">
+        kmeansClustering:
+          <fieldset>
+          <legend>Clusters: <input type="number" step="1" name="numberOfClusters" id="range">
+                column1:<input type="text" step="1" name="column1" id="range"> <br>
+                column2:<input type="text" step="1" name="column2" id="range"> <br>
+              Show clusters(data) for column1 & column2::
+          <input type="submit" name="submit">
+        </fieldset>
+        </form>
+        <br>
+
+<form name="formnew2" action="DistanceCentroidPoints" method="post">
+    numberOfClusters: <input type="number" step="1" name="numberOfClusters" id="range">
+                column1:<input type="text" step="1" name="column1" id="range"> <br>
+                column2:<input type="text" step="1" name="column2" id="range"> <br>
+              Show clusters for column1 & column2::
+          <input type="submit" name="submit">
+</form>
+    <br>
+    <form name="formnew3" action="persondetailsincluster" method="post">
+    numberOfClusters: <input type="number" step="1" name="numberOfClusters" id="range">
+                column1:<input type="text" step="1" name="column1" id="range"> <br>
+                column2:<input type="text" step="1" name="column2" id="range"> <br>
+              Show clusters for column1 & column2::
+          <input type="submit" name="submit">
+    </form>
+{##}
+{#    <form name="formnew1" action="/New1" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Shownames of all states with a total population between  <br>#}
+{#              between 2 to 8 million and then between 8 million and 40 million.</legend>#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{#    <form name="formnew2" action="/New2" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search all states For Given Total Pop Range and registered voters and show in Scatter Plot </legend>#}
+{#          Enter a Total population Range in millions: <input type="number" step="1" name="popRang1" id="range">#}
+{#               <input type="number" step="1" name="popRang2" id="range"> <br>#}
+{#              Show Results in ScatterPlot::#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{#    <form name="formq1" action="/searchdepthrangeLocation" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search earthquakes between  two depth error values with input location</legend>#}
+{#          Enter longitude : <input type="number" step="0.1" name="longitude " id="loc">#}
+{#          Enter a depth1: <input type="number" step="0.1" name="depth1" id="depth">#}
+{#          Enter a depth2: <input type="number" step="0.1" name="depth2" id="depth">#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{##}
+{#        <form name="formq0" action="/searchdepthrangeLocationRandom" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search earthquakes between  two depth error values with random counts</legend>#}
+{#              Enter a count <input type="number" name="count" id="count">#}
+{#          Enter a depth1: <input type="number" step="0.1" name="depth1" id="depth">#}
+{#          Enter a depth2: <input type="number" step="0.1" name="depth2" id="depth">#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{#        <form name="formq11" action="/searchdepthrangeLocationCache" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search earthquakes between  two depth error values </legend>#}
+{#               Now Using Cache :<br>#}
+{#              Enter a count <input type="number" name="count" id="count">#}
+{#          Enter a depth1: <input type="number" step="0.1" name="depth1" id="depth">#}
+{#          Enter a depth2: <input type="number" step="0.1" name="depth2" id="depth">#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{##}
+{##}
+{##}
+{#    <form name="form1" action="/query1" method="post">#}
+{#        Enter a count <input type="number" name="count" id="count">#}
+{#        <input type="submit" name="show">#}
+{#    </form>#}
+{#    <br>#}
+{#    <form name="form11" action="/query1WithCache" method="post">#}
+{#        Now Using Cache :<br>#}
+{#        Enter a count <input type="number" name="count" id="count">#}
+{#        <input type="submit" name="show">#}
+{#    </form>#}
+{#    <br>#}
+{#    <br>#}
+{##}
+{#    <form name="form2" action="/query2" method="post">#}
+{#        Enter a count <input type="number" name="count" id="count">#}
+{#        Enter a distance <input type="number" name="km" id="km">#}
+{#        Enter location string <input type="text" name="location" id="location">#}
+{#        <input type="submit" name="show">#}
+{#    </form>#}
+{#    <br>#}
+{#    <form name="form22" action="/query2WithCache" method="post">#}
+{#        Now Using Cache :<br>#}
+{#        Enter a count <input type="number" name="count" id="count">#}
+{#        Enter a distance <input type="number" name="km" id="km">#}
+{#        Enter location string <input type="text" name="location" id="location">#}
+{#        <input type="submit" name="show">#}
+{#    </form>#}
+{#    <br>#}
+{#    <form name="form3" action="/searchbwdatesAndMag" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search earthquakes between particular dates with input magnitude range</legend>#}
+{#              Enter a count <input type="number" name="count" id="count">#}
+{#          Enter start date: <input type="date" name="startdate">#}
+{#          Enter end date: <input type="date" name="enddate">#}
+{#          Enter a mag1: <input type="number" step="0.1" name="mag1" id="mag">#}
+{#          Enter a mag2: <input type="number" step="0.1" name="mag2" id="mag">#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{#    <form name="form33" action="/searchbwdatesAndMagCache" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search earthquakes between particular dates with input magnitude range</legend>#}
+{#              Now Using Cache :<br>#}
+{#              Enter a count <input type="number" name="count" id="count">#}
+{#          Enter start date: <input type="date" name="startdate">#}
+{#          Enter end date: <input type="date" name="enddate">#}
+{#          Enter a mag1: <input type="number" step="0.1" name="mag1" id="mag">#}
+{#          Enter a mag2: <input type="number" step="0.1" name="mag2" id="mag">#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{#     <form name="form4" action="/getearthquakedatabetweenMag" method="post">#}
+{#        Enter a magnitude <input type="number" name="magnitude1" id="mag">#}
+{#         Enter a magnitude <input type="number" name="magnitude2" id="mag">#}
+{#        Enter a count <input type="number" name="count" id="count">#}
+{#        <input type="submit" name="show">#}
+{#    </form>#}
+{#    <br>#}
+{#     <form name="form44" action="/getearthquakedatabetweenMagcache" method="post">#}
+{#          Now Using Cache :<br>#}
+{#        Enter a magnitude <input type="number" name="magnitude1" id="mag">#}
+{#         Enter a magnitude <input type="number" name="magnitude2" id="mag">#}
+{#        Enter a count <input type="number" name="count" id="count">#}
+{#        <input type="submit" name="show">#}
+{#    </form>#}
+{#    <br>#}
+{#         <form name="form5" action="/getStateCode" method="post">#}
+{#        Enter the 2 letter State <input type="text" name="statecode" id="statecode">#}
+{#        <input type="submit" name="show">#}
+{#    </form>#}
+{#    <br>#}
+{#     <form name="form6" action="/populationRange" method="post">#}
+{#        Enter a pop1 <input type="number" name="pop1" id="pop">#}
+{#         Enter a pop2 <input type="number" name="pop2" id="pop">#}
+{#         Enter a year <input type="number" name="year" id="year">#}
+{#        <input type="submit" name="show">#}
+{#    </form>#}
+{#    <br>#}
+{#     <form name="form66" action="/populationRangeCache" method="post">#}
+{#         Now Using Cache :<br>#}
+{#         Enter a pop1 <input type="number" name="pop1" id="pop">#}
+{#         Enter a pop2 <input type="number" name="pop2" id="pop">#}
+{#         Enter a year <input type="number" name="year" id="year">#}
+{#         Enter a count <input type="number" name="count" id="count">#}
+{#        <input type="submit" name="show">#}
+{#    </form>#}
+{##}
+{#        <form name="form7" action="piechartForStatePop" METHOD="post">#}
+{#            state: <input type="text" name="state">#}
+{#          Piechart visualisation for given State Population in years: <input type="submit" name="submit">#}
+{#        </form>#}
+{##}
+{#         <br>#}
+{#        <form name="form8" action="barchartForStatePop" METHOD="post">#}
+{#            state: <input type="text" name="state">#}
+{#          Barchart visualisation for given State Population in years:: <input type="submit" name="submit">#}
+{#        </form>#}
+{#        <br>#}
+{#        <form name="form9" action="scatterplotForStatePop" METHOD="post">#}
+{#             state: <input type="text" name="state">#}
+{#            Year: <input type="number" name="yr1">#}
+{#          Scatterplot visualisation for given State Population in years::#}
+{#          <input type="submit" name="submit">#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{#        <form name="form10" action="searchBLPercentinYearRange" METHOD="post">#}
+{#         Year1: <input type="number" name="yr1">#}
+{#         Year2: <input type="number" name="yr2">#}
+{#         Three LetterStateCode:<input type="text" name="code">#}
+{#              <input type="submit" name="submit">#}
+{#        </form>#}
+{##}
+{#        <form name="formq11" action="/statesForGivenPopRangeinYear" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search Total statesForGivenPopRangeinYear </legend>#}
+{#              Enter a Year <input type="number" name="year" id="year"> <br>#}
+{#          Enter a population Range1 in millions: <input type="number" step="1" name="range1" id="range">#}
+{#               <input type="number" step="1" name="range11" id="range"> <br>#}
+{#              Enter a population Range2 in millions: <input type="number" step="1" name="range2" id="range">#}
+{#               <input type="number" step="1" name="range22" id="range"> <br>#}
+{#              Enter a population Range3 in millions: <input type="number" step="1" name="range3" id="range">#}
+{#               <input type="number" step="1" name="range33" id="range"><br>#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{#        <form name="formnew3" action="/New3" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search Total states For Given Pop Range   </legend>#}
+{#            Enter a population seed value in millions (1000): <input type="number" step="1" name="seed" id="seed">#}
+{#              Show Results in Pie Chart::#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{#        <form name="formnew4" action="/New4" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Give seed Value  </legend>#}
+{#              <input type="number" step="1" name="seed" id="seed">#}
+{#              Show Results in Bar Chart::#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{#        <form name="formq12" action="/statesForGivenPopRangeinYearbarchart" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search Total states For Given Pop Range in given Year and show in BAR Chart  </legend>#}
+{#              Enter a Year <input type="number" name="year" id="year"> <br>#}
+{#          Enter a population Range1 in millions: <input type="number" step="1" name="range1" id="range">#}
+{#               <input type="number" step="1" name="range11" id="range"> <br>#}
+{#              Enter a population Range2 in millions: <input type="number" step="1" name="range2" id="range">#}
+{#               <input type="number" step="1" name="range22" id="range"> <br>#}
+{#              Enter a population Range3 in millions: <input type="number" step="1" name="range3" id="range">#}
+{#               <input type="number" step="1" name="range33" id="range"><br>#}
+{#              Show Results in bar Chart::#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{#        <form name="formq13" action="/statesForGivenPopRangeinYearScatterPlot" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search Total states For Given Pop Range in given Year and show in Scatter Plot </legend>#}
+{#              Enter a Year <input type="number" name="year" id="year"> <br>#}
+{#          Enter a population Range1 in millions: <input type="number" step="1" name="range1" id="range">#}
+{#               <input type="number" step="1" name="range11" id="range"> <br>#}
+{#              Enter a population Range2 in millions: <input type="number" step="1" name="range2" id="range">#}
+{#               <input type="number" step="1" name="range22" id="range"> <br>#}
+{#              Enter a population Range3 in millions: <input type="number" step="1" name="range3" id="range">#}
+{#               <input type="number" step="1" name="range33" id="range"><br>#}
+{#              Show Results in ScatterPlot::#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+{##}
+{##}
+{#        <form name="formq14" action="/statesForGivenPopRangeAndYearRangeBarchart" class="inpt" method="post">#}
+{#          <fieldset>#}
+{#          <legend>Search Total states For Given Pop Range and States Range in given Year and a given  show in BAR Chart  </legend>#}
+{#              Enter a Year1 <input type="number" name="year1" id="year"> <br>#}
+{#              Enter a Year2 <input type="number" name="year2" id="year"> <br>#}
+{#              Enter a Year3 <input type="number" name="year3" id="year"> <br>#}
+{#          Enter a population Range1 in millions: <input type="number" step="1" name="range1" id="range">#}
+{#               <input type="number" step="1" name="range11" id="range"> <br>#}
+{#              Enter a population Range2 in millions: <input type="number" step="1" name="range2" id="range">#}
+{#               <input type="number" step="1" name="range22" id="range"> <br>#}
+{#              Enter a population Range3 in millions: <input type="number" step="1" name="range3" id="range">#}
+{#               <input type="number" step="1" name="range33" id="range"><br>#}
+{#              Show Results in bar Chart::#}
+{#          <input type="submit" name="submit">#}
+{#        </fieldset>#}
+{#        </form>#}
+{#        <br>#}
+</body>
+</html>
